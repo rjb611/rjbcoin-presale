@@ -53,8 +53,38 @@ a {
     max-width: 300px;
     margin-top: 20px;
 }
+
 .note {
     font-size: 12px;
     margin-top: 5px;
+}
+.roadmap {
+    background-color: #0e0e0e;
+    padding: 40px 20px;
+    border-top: 2px solid #3fff6a;
+    border-bottom: 2px solid #3fff6a;
+}
+
+.roadmap h2 {
+    text-align: center;
+    font-size: 1.8em;
+    color: #3fff6a;
+    margin-bottom: 20px;
+}
+
+.roadmap ul {
+    list-style-type: none;
+    padding: 0;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.roadmap ul li {
+    font-size: 1.1em;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #1a1a1a;
+    border-left: 4px solid #3fff6a;
+    color: #eee;
 }
 
