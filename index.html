@@ -10,85 +10,57 @@
 <body>
     <header>
         <img src="static/rjb.png" alt="Logo RJB Coin" class="logo">
-        <h1>Prévente Officielle de RJB Coin</h1>
+        <h1>Prévente Officielle de <span class="highlight">RJB Coin</span></h1>
     </header>
 
     <section class="presale">
-        <h2>Participez à la révolution RJB Coin</h2>
-        <p>Notre objectif : moderniser les systèmes financiers actuels avec une blockchain rapide, sécurisée et accessible.</p>
+        <h2>🚀 Participez à la révolution <span class="highlight">RJB Coin</span></h2>
+        <p>Modernisons la finance mondiale avec la blockchain RJB rapide, décentralisée, et IA intégrée.</p>
 
         <div class="progress-container">
             <div class="progress-bar" id="progress-bar"></div>
             <p><span id="tokens-sold">12 500</span> / 5 000 000 RJB vendus</p>
         </div>
 
+        <label for="crypto-choice">Choisissez votre crypto :</label>
+        <select id="crypto-choice">
+            <option value="bnb">BNB</option>
+            <option value="eth">ETH</option>
+        </select>
+
         <button id="buy-metamask">Acheter via MetaMask</button>
-        <p class="note">Paiements acceptés en BNB et ETH via MetaMask uniquement.</p>
+        <p class="note">Paiement en BNB ou ETH uniquement via MetaMask.</p>
     </section>
 
     <section class="whitepapers">
-        <h3>Téléchargez le Livre Blanc</h3>
-        <a href="whitepaper_fr.pdf" download>📄 Livre blanc FR</a>
-        <a href="whitepaper_en.pdf" download>📄 Whitepaper EN</a>
+        <h3>📄 Téléchargez le Livre Blanc</h3>
+        <a href="whitepaper_fr.pdf" download>📘 Livre blanc FR</a>
+        <a href="whitepaper_en.pdf" download>📙 Whitepaper EN</a>
     </section>
 
     <section class="vision">
-        <h2>Pourquoi choisir RJB Coin ?</h2>
+        <h2>🌟 Pourquoi choisir <span class="highlight">RJB Coin</span> ?</h2>
         <ul>
-            <li>⏱️ Rapidité de transaction</li>
-            <li>🔐 Sécurité renforcée avec IA</li>
-            <li>⚖️ Frais dynamiques avec redistribution automatique</li>
-            <li>🌍 Impact positif sur l'économie numérique mondiale</li>
+            <li>⚡ Rapidité de transaction</li>
+            <li>🔐 Sécurité renforcée par IA</li>
+            <li>💸 Frais dynamiques avec redistribution (0.3%)</li>
+            <li>🌍 Impact positif sur l'économie numérique</li>
         </ul>
         <div class="animation">
-            <img src="static/rjb_vs_btc.gif" alt="RJB mange Bitcoin">
+            <img src="static/rjb_vs_btc.gif" alt="RJB mange BTC" class="eat-animation">
         </div>
     </section>
 
-    <section class="dashboard">
-        <h3>Montant Collecté</h3>
-        <p><span id="total-collected">0</span> USDT</p>
+    <section class="roadmap">
+        <h2>📅 Plan de Lancement - RJB Coin</h2>
+        <ul>
+            <li><strong>Juillet 2025 :</strong> Lancement de la prévente</li>
+            <li><strong>Août 2025 :</strong> Minage activé pour tous</li>
+            <li><strong>Septembre 2025 :</strong> Cotation DEX + CEX</li>
+            <li><strong>Octobre 2025 :</strong> Wallet mobile RJB</li>
+            <li><strong>Décembre 2025 :</strong> DAO + NFT Pass + staking</li>
+        </ul>
     </section>
-
-<section class="community">
-    <h2>🗣️ Témoignages de la communauté</h2>
-    <div class="testimonials">
-        <blockquote>
-            “RJB Coin va révolutionner l'économie numérique. Le projet est solide.”  
-            <span>– Alice, Développeuse Blockchain</span>
-        </blockquote>
-        <blockquote>
-            “J’ai participé dès le premier jour, et je suis confiant sur le long terme.”  
-            <span>– Karim, Investisseur crypto</span>
-        </blockquote>
-        <blockquote>
-            “Simple, rapide et transparent. Ce token est prometteur !”  
-            <span>– Sophie, Utilisatrice</span>
-        </blockquote>
-    </div>
-</section>
-
-<section class="roadmap">
-
-    <h2>📅 Plan de Lancement - RJB Coin</h2>
-    <ul>
-        <li><strong>Juillet 2025 :</strong> Lancement de la prévente publique RJB Coin</li>
-        <li><strong>Août 2025 :</strong> Ouverture du minage RJB pour les utilisateurs</li>
-        <li><strong>Septembre 2025 :</strong> Cotation de RJB sur DEX et CEX partenaires</li>
-        <li><strong>Octobre 2025 :</strong> Lancement du Wallet Mobile RJB</li>
-        <li><strong>Décembre 2025 :</strong> DAO communautaire et fonctionnalités avancées (staking, NFT Pass)</li>
-    </ul>
-</section>
-
-<section class="newsletter">
-    <h2>📬 Restez informé des actualités RJB Coin</h2>
-    <p>Entrez votre email pour recevoir des informations exclusives sur le projet.</p>
-    <form id="newsletter-form">
-        <input type="email" id="email" placeholder="Votre adresse email" required>
-        <button type="submit">S'inscrire</button>
-    </form>
-    <p id="email-message" class="note"></p>
-</section>
 
     <footer>
         <p>© 2025 RJB Blockchain. Tous droits réservés.</p>
