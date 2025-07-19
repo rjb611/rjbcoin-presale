@@ -1,50 +1,76 @@
 body {
-  font-family: Arial, sans-serif;
-  background-color: #0d0d0d;
-  color: #f1f1f1;
-  margin: 0;
-  padding: 0;
-  text-align: center;
+    background-color: #111;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
 }
+
 header {
-  background: #1a1a1a;
-  padding: 20px;
+    padding: 20px;
+    background-color: #1f1f1f;
 }
+
 .logo {
-  width: 100px;
+    width: 80px;
 }
+
 .highlight {
-  color: #f4c430;
+    color: #fbd307;
 }
-input, select, button {
-  margin-top: 10px;
-  padding: 10px;
-  font-size: 16px;
+
+.progress-container {
+    background: #333;
+    border-radius: 5px;
+    margin: 10px auto;
+    padding: 10px;
+    width: 80%;
 }
-button {
-  background-color: #f4c430;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-.btns button {
-  margin: 5px;
-}
-.progress-bar-bg {
-  width: 80%;
-  background-color: #333;
-  border-radius: 10px;
-  margin: 10px auto;
-  height: 20px;
-}
+
 .progress-bar {
-  height: 100%;
-  background-color: #f4c430;
-  width: 0%;
-  border-radius: 10px;
-  transition: width 0.5s;
+    background: #fbd307;
+    height: 20px;
+    width: 25%;
+    border-radius: 5px;
 }
+
+input[type="number"] {
+    padding: 10px;
+    font-size: 16px;
+    margin: 10px auto;
+    width: 80%;
+    border-radius: 5px;
+    border: none;
+}
+
+.buy-buttons {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+button {
+    padding: 12px 20px;
+    background: #fbd307;
+    color: #111;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+a {
+    color: #fbd307;
+    text-decoration: none;
+    display: block;
+    margin: 5px;
+}
+
 .eat-animation {
-  width: 200px;
-  margin-top: 20px;
+    width: 200px;
+    margin-top: 15px;
 }
+
