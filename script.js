@@ -1,40 +1,24 @@
-document.getElementById('buy-metamask').addEventListener('click', async () => {
-    const crypto = document.getElementById('crypto-choice').value;
+function connectMetaMask() {
+  const selectedCrypto = document.getElementById('crypto').value;
+  let address = '';
 
-    if (typeof window.ethereum === 'undefined') {
-        alert("MetaMask est requis pour cette opération.");
-        return;
-    }
+  if (selectedCrypto === 'bnb') {
+    address = '0x4ecc97a9b76daa354a46736bfdf2b2567ad004d3';
+  } else if (selectedCrypto === 'eth') {
+    address = '0xb4fc22c825803B7Ef88Fd2158d7C0BF5AC3DAf6C';
+  }
 
-    const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
-    const user = accounts[0];
+  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
-    const amountEth = crypto === 'eth' ? '0.01' : '0.003'; // exemple montant
-    const receiver = crypto === 'eth'
-        ? "0xb4fc22c825803B7Ef88Fd2158d7C0BF5AC3DAf6C"
-        : "0x4ecc97a9b76daa354a46736bfdf2b2567ad004d3";
+  const metamaskLink = isMobile
+    ? `https://metamask.app.link/send/${address}`
+    : `https://metamask.io`;
 
-    const params = [{
-        from: user,
-        to: receiver,
-        value: (BigInt(parseFloat(amountEth) * 1e18)).toString(16),
-    }];
+  window.open(metamaskLink, '_blank');
 
-    try {
-        await ethereum.request({
-            method: 'eth_sendTransaction',
-            params: params,
-        });
+  // Affiche la confirmation temporairement
+  setTimeout(() => {
+    document.getElementById('confirmation').style.display = 'block';
+  }, 2000);
+}
 
-        const response = await fetch('/enregistrer', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ user, crypto, amount: amountEth })
-        });
-
-        window.location.href = "confirmation.html";
-    } catch (error) {
-        alert("Transaction annulée ou erreur.");
-        console.error(error);
-    }
-});
