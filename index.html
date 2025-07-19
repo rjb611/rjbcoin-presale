@@ -1,73 +1,86 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RJB Coin - Prévente Officielle</title>
-    <link rel="stylesheet" href="style.css">
-    <script defer src="script.js"></script>
+  <meta charset="UTF-8">
+  <title>RJB Coin - Prévente Officielle</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
 </head>
 <body>
-    <header>
-        <img src="static/rjb.png" alt="Logo RJB Coin" class="logo">
-        <h1>Prévente Officielle de <span class="highlight">RJB Coin</span></h1>
-    </header>
+  <header>
+    <img src="static/rjb.png" alt="Logo RJB" class="logo">
+    <h1>Prévente Officielle de <span class="highlight">RJB Coin</span></h1>
+    <p>Un projet blockchain rapide, intelligent, et communautaire.</p>
+  </header>
 
-    <section class="presale">
-        <h2>🚀 Rejoignez la révolution <span class="highlight">RJB</span></h2>
-        <p>Un projet blockchain rapide, intelligent, et communautaire.</p>
+  <section class="presale">
+    <h2>🚀 Rejoignez la révolution RJB</h2>
+    
+    <div class="token-input">
+      <label for="rjbAmount">Combien de RJB souhaitez-vous acheter ?</label>
+      <input type="number" id="rjbAmount" placeholder="Ex: 500">
+    </div>
 
-        <div class="progress-container">
-            <div class="progress-bar" id="progress-bar"></div>
-            <p><span id="tokens-sold">12 500</span> / 5 000 000 RJB vendus</p>
-        </div>
+    <div id="estimates">
+      <p><strong>BNB :</strong> <span id="bnbAmount">0</span></p>
+      <p><strong>ETH :</strong> <span id="ethAmount">0</span></p>
+      <p><strong>USDT :</strong> <span id="usdtAmount">0</span></p>
+    </div>
 
-        <div class="button-group">
-            <label for="crypto">Choisissez votre crypto :</label>
-            <select id="crypto">
-                <option value="bnb">BNB</option>
-                <option value="eth">ETH</option>
-            </select>
-            <button onclick="buyWithMetaMaskDesktop()">Acheter via MetaMask (PC)</button>
-            <button onclick="buyWithMetaMaskMobile()">Acheter via MetaMask (Mobile)</button>
-        </div>
+    <label for="crypto">Choisissez votre crypto :</label>
+    <select id="crypto">
+      <option value="bnb">BNB</option>
+      <option value="eth">ETH</option>
+    </select>
 
-        <p class="note">MetaMask requis (desktop ou mobile)</p>
-    </section>
+    <div class="btns">
+      <button onclick="buyWithMetaMask()">💻 Acheter avec MetaMask (PC)</button>
+      <button onclick="buyWithMetaMaskMobile()">📱 Acheter avec MetaMask (Mobile)</button>
+    </div>
 
-    <section class="whitepapers">
-        <h3>📄 Livre Blanc</h3>
-        <a href="whitepaper_fr.pdf" download>📘 Français</a>
-        <a href="whitepaper_en.pdf" download>📙 English</a>
-    </section>
+    <p class="note">MetaMask requis (desktop ou mobile)</p>
+  </section>
 
-    <section class="vision">
-        <h2>💡 Pourquoi <span class="highlight">RJB Coin</span> ?</h2>
-        <ul>
-            <li>⚡ Transactions ultra-rapides</li>
-            <li>🔐 Sécurité IA intégrée</li>
-            <li>💰 Redistribution 0,3% automatique</li>
-            <li>🌍 Impact global décentralisé</li>
-        </ul>
-        <div class="animation">
-            <img src="static/rjb_vs_btc.gif" alt="RJB mange BTC" class="eat-animation">
-        </div>
-    </section>
+  <section class="progress">
+    <h3>📊 Progression de la prévente</h3>
+    <div class="progress-bar-bg">
+      <div id="progress-bar" class="progress-bar"></div>
+    </div>
+    <p><span id="tokens-sold">12 500</span> / 5 000 000 RJB vendus</p>
+  </section>
 
-    <section class="roadmap">
-        <h2>📆 Plan de Lancement</h2>
-        <ul>
-            <li><strong>Juillet 2025 :</strong> Lancement de la prévente</li>
-            <li><strong>Novembre 2025 :</strong> Wallet mobile RJB</li>
-            <li><strong>Décembre 2025 :</strong> Activation du minage pour tous</li>
-            <li><strong>Janvier 2026 :</strong> Cotation sur DEX & CEX</li>
-            <li><strong>Juillet 2026 :</strong> DAO, NFT Pass, Staking</li>
-        </ul>
-    </section>
+  <section class="whitepapers">
+    <h3>📄 Livre Blanc</h3>
+    <a href="whitepaper_fr.pdf" download>📘 Français</a>
+    <a href="whitepaper_en.pdf" download>📙 English</a>
+  </section>
 
-    <footer>
-        <p>© 2025 <span class="highlight">RJB Blockchain</span>. Tous droits réservés.</p>
-    </footer>
+  <section class="vision">
+    <h3>💡 Pourquoi RJB Coin ?</h3>
+    <ul>
+      <li>⚡ Transactions ultra-rapides</li>
+      <li>🔐 Sécurité IA intégrée</li>
+      <li>💰 Redistribution 0,3% automatique</li>
+      <li>🌍 Impact global décentralisé</li>
+    </ul>
+    <img src="static/rjb_vs_btc.gif" alt="RJB mange BTC" class="eat-animation">
+  </section>
+
+  <section class="roadmap">
+    <h3>📆 Plan de Lancement</h3>
+    <ul>
+      <li><strong>Juillet 2025</strong> : Lancement de la prévente</li>
+      <li><strong>Novembre 2025</strong> : Wallet mobile RJB</li>
+      <li><strong>Décembre 2025</strong> : Activation du minage pour tous</li>
+      <li><strong>Janvier 2026</strong> : Cotation sur DEX & CEX</li>
+      <li><strong>Juillet 2026</strong> : DAO, NFT Pass, Staking</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>© 2025 RJB Blockchain. Tous droits réservés.</p>
+  </footer>
 </body>
 </html>
 
