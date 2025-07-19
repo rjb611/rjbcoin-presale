@@ -6,28 +6,26 @@ const sold = 12500;
 function updateEstimates() {
   const amount = parseInt(document.getElementById("rjbAmount").value || "0");
 
-  document.getElementById("bnbAmount").textContent = (amount * tokenPriceBNB).toFixed(6);
-  document.getElementById("ethAmount").textContent = (amount * tokenPriceETH).toFixed(6);
-  document.getElementById("usdtAmount").textContent = (amount * tokenPriceUSDT).toFixed(2);
+document.getElementById("rjbAmount").addEventListener("input", () => {
+  const rjbAmount = parseFloat(document.getElementById("rjbAmount").value);
+  const rjbPriceUSD = 0.20;
+  const usdTotal = rjbAmount * rjbPriceUSD;
 
-  // update bar
-  const percent = Math.min((sold / 5000000) * 100, 100);
-  document.getElementById("progress-bar").style.width = percent + "%";
-  document.getElementById("tokens-sold").textContent = sold.toLocaleString();
-}
+  const bnbPrice = 500; // valeur à ajuster en temps réel
+  const ethPrice = 3000;
+  const usdtPrice = 1;
 
-function buyWithMetaMask() {
-  alert("Connexion à MetaMask (version PC)... Paiement fictif BNB/ETH.");
+  document.getElementById("bnbAmount").textContent = (usdTotal / bnbPrice).toFixed(6);
+  document.getElementById("ethAmount").textContent = (usdTotal / ethPrice).toFixed(6);
+  document.getElementById("usdtAmount").textContent = usdTotal.toFixed(2);
+});
+
+function buyWithMetaMaskDesktop() {
+  window.location.href = "https://metamask.io";
 }
 
 function buyWithMetaMaskMobile() {
-  const crypto = document.getElementById("crypto").value;
-  const mobileLink = crypto === "bnb"
-    ? "https://metamask.app.link/send/0x4ecc97a9b76daa354a46736bfdf2b2567ad004d3"
-    : "https://metamask.app.link/send/0xb4fc22c825803B7Ef88Fd2158d7C0BF5AC3DAf6C";
-  window.open(mobileLink, "_blank");
+  const deepLink = "https://metamask.app.link/dapp/rjbcoin.io"; // change avec ton vrai domaine
+  window.location.href = deepLink;
 }
-
-document.getElementById("rjbAmount").addEventListener("input", updateEstimates);
-updateEstimates();
 
