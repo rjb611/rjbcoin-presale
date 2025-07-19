@@ -1,24 +1,21 @@
-function connectMetaMask() {
-  const selectedCrypto = document.getElementById('crypto').value;
-  let address = '';
+function getSelectedAddress() {
+    const crypto = document.getElementById('crypto').value;
+    if (crypto === 'bnb') {
+        return '0x4ecc97a9b76daa354a46736bfdf2b2567ad004d3';
+    } else if (crypto === 'eth') {
+        return '0xb4fc22c825803B7Ef88Fd2158d7C0BF5AC3DAf6C';
+    }
+    return '';
+}
 
-  if (selectedCrypto === 'bnb') {
-    address = '0x4ecc97a9b76daa354a46736bfdf2b2567ad004d3';
-  } else if (selectedCrypto === 'eth') {
-    address = '0xb4fc22c825803B7Ef88Fd2158d7C0BF5AC3DAf6C';
-  }
+function buyWithMetaMaskDesktop() {
+    const address = getSelectedAddress();
+    window.open('https://metamask.io', '_blank');
+}
 
-  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-
-  const metamaskLink = isMobile
-    ? `https://metamask.app.link/send/${address}`
-    : `https://metamask.io`;
-
-  window.open(metamaskLink, '_blank');
-
-  // Affiche la confirmation temporairement
-  setTimeout(() => {
-    document.getElementById('confirmation').style.display = 'block';
-  }, 2000);
+function buyWithMetaMaskMobile() {
+    const address = getSelectedAddress();
+    const deeplink = `https://metamask.app.link/send/${address}`;
+    window.open(deeplink, '_blank');
 }
 
